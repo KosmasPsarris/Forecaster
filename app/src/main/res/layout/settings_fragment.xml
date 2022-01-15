@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    tools:context=".ui.settings.SettingsFragment"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textView_weather_location"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="15dp"
+            android:text="@string/textView_device_location"
+            android:textColor="@color/black"
+            android:textSize="32sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_device_location"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:checked="true" /> <!-- Important to set it true automatically for efficient check in SettingsFragment -->
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textview_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/textView_select_location"
+        android:textColor="@color/black"
+        android:textSize="28sp" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="#FCF2D3"
+        android:iconifiedByDefault="false"
+        android:inputType="text|textAutoComplete|textAutoCorrect"
+        android:queryHint="Type Location Here"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:text="@string/textView_unit_system"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_unit_system"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp">
+
+        <RadioButton
+            android:id="@+id/radio_button_metric"
+            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@string/radioButton_metric"
+            android:textAlignment="viewStart"
+            android:textSize="38sp" />
+
+        <RadioButton
+            android:id="@+id/radio_button_imperial"
+            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radioButton_imperial"
+            android:textAlignment="viewStart"
+            android:textSize="38sp" />
+    </RadioGroup>
+
+</LinearLayout>
