@@ -9,12 +9,16 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 
+const val LANGUAGE = "en"
+const val DAYS = 3
+
 class WeatherRepository @Inject constructor(
     private val api: WeatherApi,
     private val db: ForecastDatabase,
     private val dataStorePreferences : DataStorePreferences
 ) {
     private val currentWeatherDao = db.currentWeatherDao()
+    private val futureWeatherForecastDao = db.futureWeatherForecastDAO()
 
     fun getCurrentWeather() = networkBoundResource(
         query = {
@@ -25,7 +29,6 @@ class WeatherRepository @Inject constructor(
 
             // Change location and other details based on dataStorePreferences
             val location = dataStorePreferences.preferencesFlow.first().location
-            val languageCode = "en"
 
             /*
             // Get new weather data
@@ -39,13 +42,32 @@ class WeatherRepository @Inject constructor(
              */
 
             // Get new weather data and pass it below to be saved into database
-            api.getCurrentWeather(location = location, languageCode = languageCode)
+            api.getCurrentWeather(location = location, languageCode = LANGUAGE)
         },
         saveFetchResult = { currentWeatherResponse ->
-            // withTransaction is used for multiple DAO operations
+            // withTransaction is used for multiple DAO operations. If one fails, the others don't execute
             db.withTransaction {
                 currentWeatherDao.deleteCurrentWeather()
                 currentWeatherDao.insertCurrentWeather(currentWeatherResponse)
+            }
+        }
+    )
+
+    fun getFutureWeatherForecast() = networkBoundResource(
+        query = {
+            futureWeatherForecastDao.getWeatherForecastFuture()
+        },
+        fetch = {
+            delay(2000)
+            val location = dataStorePreferences.preferencesFlow.first().location
+
+            api.getWeatherForecast(location = location, languageCode = LANGUAGE, days = DAYS)
+        },
+        saveFetchResult = { futureWeatherForecastResponse ->
+
+            db.withTransaction {
+                futureWeatherForecastDao.deleteFutureWeatherForecast()
+                futureWeatherForecastDao.insertFutureWeatherForecast(futureWeatherForecastResponse)
             }
         }
     )

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_currentWeatherFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_currentWeatherFragment_to_futureListWeatherFragment"
+            app:destination="@id/futureListWeatherFragment" />
     </fragment>
     <fragment
         android:id="@+id/futureListWeatherFragment"
@@ -22,12 +25,25 @@
         <action
             android:id="@+id/action_futureListWeatherFragment_to_futureDetailWeatherFragment"
             app:destination="@id/futureDetailWeatherFragment" />
+        <action
+            android:id="@+id/action_futureListWeatherFragment_to_currentWeatherFragment"
+            app:destination="@id/currentWeatherFragment" />
     </fragment>
     <fragment
         android:id="@+id/futureDetailWeatherFragment"
         android:name="com.myapps.forecaster.ui.weather.future.detail.FutureDetailWeatherFragment"
         android:label="ForecastDetails"
-        tools:layout="@layout/future_detail_weather_fragment" />
+        tools:layout="@layout/future_detail_weather_fragment" >
+        <action
+            android:id="@+id/action_futureDetailWeatherFragment_to_futureListWeatherFragment"
+            app:destination="@id/futureListWeatherFragment" />
+        <argument
+            android:name="day"
+            app:argType="com.myapps.forecaster.data.db.entity.Day" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.myapps.forecaster.ui.settings.SettingsFragment"

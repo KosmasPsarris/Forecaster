@@ -22,5 +22,4 @@ interface CurrentWeatherDAO {
 
     @Query("SELECT * FROM current_weather")
     fun getWeatherCurrent(): Flow<CurrentWeatherResponse>
-
 }

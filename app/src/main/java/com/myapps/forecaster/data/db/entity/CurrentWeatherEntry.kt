@@ -1,10 +1,7 @@
 package com.myapps.forecaster.data.db.entity
 
 import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import com.myapps.forecaster.data.DataStorePreferences
 
 data class CurrentWeatherEntry(
     @SerializedName("temp_c")

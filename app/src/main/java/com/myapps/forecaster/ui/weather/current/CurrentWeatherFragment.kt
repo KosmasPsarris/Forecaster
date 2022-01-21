@@ -74,8 +74,8 @@ class CurrentWeatherFragment : Fragment(R.layout.current_weather_fragment) {
 
 
                 // Show progress bar if resource is loading and we don't have cache data
-                progressBarLoading.isVisible = result is Resource.Loading && arrayOf(result.data).isNullOrEmpty()
-                textViewError.isVisible = result is Resource.Error && arrayOf(result.data).isNullOrEmpty()
+                progressBarLoading.isVisible = result is Resource.Loading && listOf(result.data).isNullOrEmpty()
+                textViewError.isVisible = result is Resource.Error && listOf(result.data).isNullOrEmpty()
                 textViewError.text = result.error?.localizedMessage
             }
         }

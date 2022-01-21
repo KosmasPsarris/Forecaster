@@ -61,6 +61,7 @@ object AppModule {
     @Singleton
     fun provideDatabase(app: Application) : ForecastDatabase =
         Room.databaseBuilder(app, ForecastDatabase::class.java, "Forecast_database")
+            .fallbackToDestructiveMigration()
             .build()
 
 }

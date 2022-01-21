@@ -7,8 +7,7 @@
     <item
         android:id="@+id/futureListWeatherFragment"
         android:icon="@drawable/ic_calendar_week"
-        android:title="@string/buttonNav_menu_7days"
-        android:enabled="false"/>
+        android:title="@string/buttonNav_menu_7days" />
     <item
         android:id="@+id/settingsFragment"
         android:icon="@drawable/ic_settings"

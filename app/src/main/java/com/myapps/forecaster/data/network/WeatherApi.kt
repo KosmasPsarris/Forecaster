@@ -1,8 +1,7 @@
 package com.myapps.forecaster.data.network
 
-import androidx.lifecycle.LiveData
 import com.myapps.forecaster.data.network.response.CurrentWeatherResponse
-import com.myapps.forecaster.data.network.response.WeatherForecastResponse
+import com.myapps.forecaster.data.network.response.FutureWeatherForecastResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -23,7 +22,7 @@ interface WeatherApi {
     suspend fun getWeatherForecast(
         @Query("q") location: String,
         @Query("lang") languageCode: String = "en",
-        @Query("days") days: Int
-    ): WeatherForecastResponse
+        @Query("days") days: Int = 7
+    ): FutureWeatherForecastResponse
 
 }

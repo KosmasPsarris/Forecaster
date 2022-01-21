@@ -3,22 +3,45 @@
 
     <!-- Current Weather -->
     <string name ="imageView_container_icon_description">An icon that displays the current weather condition.</string>
+
     <string name="current_metric_temperature">%1$s°C</string>
     <string name="current_metric_wind">Wind %1$s, %2$s kph</string>
     <string name="current_metric_precipitation">Precipitation: %1$s mm</string>
     <string name="current_metric_feelsLikeTemperature">Feels like %1$s°C</string>
     <string name="current_metric_visibility">Visibility: %1$s km</string>
+
     <string name="current_imperial_temperature">%1$s°F</string>
     <string name="current_imperial_wind">Wind %1$s, %2$s mph</string>
     <string name="current_imperial_precipitation">Precipitation: %1$s in</string>
     <string name="current_imperial_feelsLikeTemperature">Feels like %1$s°F</string>
     <string name="current_imperial_visibility">Visibility: %1$s mi.</string>
 
-    <!-- Future Weather -->
-    <string name ="imageView_future_detail_container_icon_description">An icon that displays the future detailed weather condition.</string>
+    <!-- Future Weather List Adapter -->
+    <string name ="future_weather_list_adapter_metric_temperature">%1$s°C</string>
+    <string name ="future_weather_list_adapter_imperial_temperature">%1$s°F</string>
 
     <!-- Future Item Weather -->
     <string name ="imageView_future_item_container_icon_description">An icon that displays the future item weather condition.</string>
+
+
+    <!-- Future Weather Details -->
+    <string name ="imageView_future_detail_container_icon_description">An icon that displays the future detailed weather condition.</string>
+
+    <string name="future_details_metric_temperature">%1$s°C</string>
+    <string name="future_details_metric_min_max_temperature">Min: %1$s°C Max: %2$s°C</string>
+    <string name="future_details_metric_wind">Wind: %1$s kph</string>
+    <string name="future_details_metric_precipitation">Precipitation: %1$s mm</string>
+    <string name="future_details_metric_visibility">Visibility: %1$s km</string>
+
+    <string name="future_details_imperial_temperature">%1$s°F</string>
+    <string name="future_details_imperial_min_max_temperature">Min: %1$s°F Max: %2$s°F</string>
+    <string name="future_details_imperial_wind">Wind: %1$s mph</string>
+    <string name="future_details_imperial_precipitation">Precipitation: %1$s in</string>
+    <string name="future_details_imperial_visibility">Visibility: %1$s mi.</string>
+
+    <string name="future_details_humidity">Humidity: %1$s</string>
+    <string name="future_details_uv">UV: %1$s</string>
+
 
     <!-- Settings -->
     <string name="textView_weather_location">Weather Location</string>
